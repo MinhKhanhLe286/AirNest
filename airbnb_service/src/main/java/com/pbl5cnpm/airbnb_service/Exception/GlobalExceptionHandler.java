@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.pbl5cnpm.airbnb_service.dto.ApiResponse;
+import com.pbl5cnpm.airbnb_service.dto.Response.ApiResponse;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

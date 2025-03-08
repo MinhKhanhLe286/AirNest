@@ -1,4 +1,4 @@
-package com.pbl5cnpm.airbnb_service.dto;
+package com.pbl5cnpm.airbnb_service.dto.Response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
