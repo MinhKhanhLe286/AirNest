@@ -1,7 +1,9 @@
 package com.pbl5cnpm.airbnb_service.Exception;
 
 public enum ErrorCode {
-    USER_EXISTED(1000,"user existd")
+    USER_EXISTED(1000,"user existd"),
+    ROLE_NOT_EXISTED(1001,"role not exited!"),
+    USERNAME_EXISTED(1002, "username exited!")
     ;
     ErrorCode(int code, String message){
         this.code = code;

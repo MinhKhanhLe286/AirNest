@@ -1,5 +1,5 @@
 package com.pbl5cnpm.airbnb_service.enums;
 
-public enum RoleType {
+public enum RoleName {
     GUEST, HOST, ADMIN 
 }
