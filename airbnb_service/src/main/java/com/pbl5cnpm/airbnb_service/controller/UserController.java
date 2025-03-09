@@ -16,7 +16,6 @@ import com.pbl5cnpm.airbnb_service.dto.Response.ApiResponse;
 import com.pbl5cnpm.airbnb_service.dto.Response.UserResponse;
 import com.pbl5cnpm.airbnb_service.service.UserService;
 
-import jakarta.mail.MessagingException;
 import jakarta.validation.Valid;
 
 @RestController
