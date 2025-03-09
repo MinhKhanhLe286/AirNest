@@ -1,6 +1,7 @@
 package com.pbl5cnpm.airbnb_service.Exception;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -23,5 +24,20 @@ public class GlobalExceptionHandler {
         apirest.setMessage((err.getMessage()));
 
         return ResponseEntity.badRequest().body(apirest);
+    }
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ApiResponse<String>> handleMethodArgumentNotValidException(MethodArgumentNotValidException exception){
+        String key = exception.getFieldError().getDefaultMessage();
+        ErrorCode err = ErrorCode.INVALID_KEY;
+        try {
+            err = ErrorCode.valueOf(key);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Crreatd emun by key error!");
+        }
+
+        return ResponseEntity.badRequest().body(ApiResponse.<String>builder()
+                                                .message(err.getMessage())
+                                                .code(err.getCode())   
+                                                .build());
     }
 }

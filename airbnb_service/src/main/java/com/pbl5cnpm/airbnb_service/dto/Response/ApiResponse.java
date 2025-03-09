@@ -1,5 +1,9 @@
 package com.pbl5cnpm.airbnb_service.dto.Response;
 
+
+
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.AllArgsConstructor;
@@ -16,6 +20,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ApiResponse<T> {
     private int code = 200;
+    @Builder.Default
+    private Date timestamp = new Date(System.currentTimeMillis());
     private String message;
     private T result;
 }

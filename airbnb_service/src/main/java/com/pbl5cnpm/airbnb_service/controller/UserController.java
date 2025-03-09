@@ -16,6 +16,9 @@ import com.pbl5cnpm.airbnb_service.dto.Response.ApiResponse;
 import com.pbl5cnpm.airbnb_service.dto.Response.UserResponse;
 import com.pbl5cnpm.airbnb_service.service.UserService;
 
+import jakarta.mail.MessagingException;
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api")
 
@@ -24,7 +27,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/users")
-    public ResponseEntity<ApiResponse<UserResponse>> created(@RequestBody UserRequest request) {
+    public ResponseEntity<ApiResponse<UserResponse>> created(@RequestBody @Valid UserRequest request)  {
         UserResponse userResponse = userService.handleCreateUser(request);
 
         ApiResponse<UserResponse> apiResponse = ApiResponse.<UserResponse>builder()

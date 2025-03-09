@@ -1,5 +1,6 @@
 package com.pbl5cnpm.airbnb_service.dto.Request;
 
+import jakarta.validation.constraints.Size;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,9 +16,11 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserRequest {
+    @Size(min = 8, message = "USERNAME_VALID")
     String username;
     String fullname;
     String email;
+    @Size(min = 6, message = "PASSWORD_VALID")
     String password;
     String phone;
 }
